@@ -1,0 +1,52 @@
+<template>
+   <div>
+      <div class="slds-form-element">
+         <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+               <div class="slds-combobox" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                  <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                     <template if:false={recordselected}>
+                        <input class="slds-input slds-combobox__input" id="combobox-id-1" aria-autocomplete="list" aria-controls="listbox-id-1"
+                           role="textbox" type="text" placeholder="Search..."  onkeyup={onKeyChange} value={selectedValue}/>
+                     </template>
+                     <template if:true={recordselected}>
+                        <span class="slds-pill slds-pill_link fullWidth slds-input slds-combobox__input"> 
+                           <a href="javascript:void(0);" 
+                              class="slds-pill__action slds-p-left_x-small" title={selectedValue}>
+                              <lightning-icon icon-name={iconname} size="x-small"></lightning-icon>
+                              <span class="slds-pill__label slds-p-left_x-small">{selectedValue}</span>
+                           </a>
+                           <button onclick={clearSelection}
+                           class="slds-button slds-button_icon slds-button_icon slds-pill__remove" 
+                           title="Remove">
+                           <lightning-icon icon-name="utility:close" size="small" 
+                                       alternative-text="Press delete or backspace to remove"></lightning-icon>
+                              <span class="slds-assistive-text" >Remove</span>
+                           </button>
+                        </span>
+                     </template>
+                  </div>
+                  <template if:true={recordsList}>
+                     <div class="slds-combobox_container">
+                        <div id="listbox-id-1" class="slds-dropdown slds-dropdown_fluid" role="listbox">
+                           <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                              <template for:each={recordsList} for:item="item">
+                                 <li key={item.Id} role="presentation" class="slds-listbox__item">
+                                    <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option"
+                                       data-itemid = {item.Id} data-itemname={item.Name} onclick={setSelectedValue}>
+                                       <span role="menuitem" tabindex="-1" data-itemid = {item.Id} data-itemname={item.Name}>
+                                          <lightning-icon icon-name={iconname} size="x-small" data-itemid = {item.Id} data-itemname={item.Name}></lightning-icon> {item.Name}
+                                       </span>
+                                    </div>
+                                 </li>
+                              </template>
+                           </ul>
+                        </div>
+                     </div>
+                  </template>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>  
+</template>

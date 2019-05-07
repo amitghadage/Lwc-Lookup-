@@ -1,0 +1,61 @@
+<template>
+    <lightning-card>
+        <!--Account details : -->
+        <label class="slds-form-element__label" for="lookupCmp">Search Account</label>
+        <c-lookup-lwc objectname="Account" iconname="standard:account" onselected = {handleSelected}></c-lookup-lwc>
+        <template if:true={account}>
+            <div class="demo-only" style="width: 30rem;">
+                <article class="slds-tile">
+                    <h3 class="slds-tile__title slds-truncate" title="Account details"><a href="javascript:void(0);">Account details</a></h3>
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name :</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Name">{account.Name}</dd>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Id">Id:</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Id">{account.Id}</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+        </template>
+
+        
+        <!--Contact details-->
+        <label class="slds-form-element__label" for="lookupCmp">Search Contact</label>
+        <c-lookup-lwc objectname="Contact" iconname="standard:contact" onselected = {handleSelected}></c-lookup-lwc>
+        <template if:true={contact}>
+            <div class="demo-only" style="width: 30rem;">
+                <article class="slds-tile">
+                    <h3 class="slds-tile__title slds-truncate" title="Contact details"><a href="javascript:void(0);">Contact details</a></h3>
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name :</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Name">{contact.Name}</dd>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Id">Id:</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Id">{contact.Id}</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+        </template>
+
+        <!--Opportunity details -->
+        <label class="slds-form-element__label" for="lookupCmp">Search Opportunity</label>
+        <c-lookup-lwc objectname="Opportunity" iconname="standard:opportunity" onselected = {handleSelected}></c-lookup-lwc>
+        <template if:true={opportunity}>
+            <div class="demo-only" style="width: 30rem;">
+                <article class="slds-tile">
+                    <h3 class="slds-tile__title slds-truncate" title="Opportunity details"><a href="javascript:void(0);">Opportunity details</a></h3>
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name :</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Name">{opportunity.Name}</dd>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Id">Id:</dt>
+                            <dd class="slds-item_detail slds-truncate" title="Record Id">{opportunity.Id}</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+        </template>
+    </lightning-card>  
+</template>
