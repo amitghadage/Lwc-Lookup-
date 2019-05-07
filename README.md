@@ -1,25 +1,13 @@
-# SFDX App
-
-## Dev, Build and Test
-
-## Resources
-
-## Description of Files and Directories
-
-## Issues
-
-##Introduction:
-
+# Introduction
 In lwc there is no out of the box component by which lookup can be implemented. In lightning component you can use force:inputFIeld for lookup but it is not available in lwc. You can use lightning-record-edit-form with lightning-input-field for lookup, but when your functionality is complex than just create or update operation on sobject you will need lookup component. Hence, I thought of a component which can be used anywhere in lwc for any object. You can find source code of this component on my github repository.
 
-
-##Component Attributes:
-
+## Component Attributes:
 objectname : The object name for which lookup is needed.
 iconname :  To see record icon in search results.
 onselected: JavaScript method where selected record in lookup can be accessed.
 
-##How to use it?
+
+## How to use it?
 
 Below is sample code on how to use this component.
 
@@ -47,6 +35,3 @@ handleSelected(event) {
   }
 
 }
-
-
- 
